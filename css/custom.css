@@ -1,1 +1,49 @@
-/* write your custom styles here */
+@font-face {
+    font-family: OpenSansRegular;
+    src: url(../fonts/OpenSans-Regular.ttf); 
+}
+
+@font-face {
+    font-family: OpenSansLight;
+    src: url(../fonts/OpenSans-Light.ttf); 
+}
+
+@font-face {
+    font-family: OpenSansBold;
+    src: url(../fonts/OpenSans-Bold.ttf); 
+}
+
+@font-face {
+    font-family: OpenSansSemiBold;
+    src: url(../fonts/OpenSans-Semibold.ttf); 
+}
+
+@font-face {
+    font-family: Cabin-Regular;
+    src: url(../fonts/cabin/Cabin-Regular.otf); 
+}
+
+.openSansFont {
+    font-family: OpenSansSemiBold;
+}
+
+
+.openSansFont h1 {
+        font-family: OpenSansBold;
+    }
+.nav-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 75%;
+}
+.navbar-brand {
+    font-family: Cabin-Regular;
+}
+
+@media(max-width: 1500px) {
+    .md-w-75 {
+        
+    }
+}
