@@ -80,3 +80,10 @@
 form {
     margin-top: 4em;
 }
+
+.main-content h1, .main-content footer p{
+    transition: all 1s;
+}
+.logo {
+    max-height: 40px;
+}
