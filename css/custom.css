@@ -23,13 +23,13 @@
     src: url(../fonts/cabin/Cabin-Regular.otf); 
 }
 
-.openSansFont {
-    font-family: OpenSansSemiBold;
+.open-sans-light {
+    font-family: OpenSansLight;
 }
 
 
-.openSansFont h1 {
-        font-family: OpenSansLight;
+.open-sans-bold {
+        font-family: OpenSansSemiBold;
     }
 .nav-container {
     margin-right: auto;
@@ -121,4 +121,57 @@ form {
 }
 .email-form {
     align-content: space-between;
+}
+
+
+.btn-light {
+    border: solid 1px rgba(128, 128, 128, 0.377);
+}
+
+.card {
+    height: 60px;
+    width: 60px;
+    background-color: gray;
+}
+
+.h-15 {
+    height: 20% !important;
+}
+
+.w-33 {
+    width: 33%;
+}
+.font-size-14 {
+    font-size: 20px;
+}
+
+.main-image {
+    background-image: url("../images/main.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn-light:hover, .btn-primary {
+    background-color: #ff9c00;
+    border-color: #ff9c00;
+}
+.btn-primary:hover {
+    background-color: #ffd000;
+    border-color: #ffd000;
+}
+.area {
+    width: 150px;
+    height: 150px;
+    border-right: solid 1px #f7f6f4;
+}
+.area .value {
+    font-size: 2em;
+}
+.stat-block .value {
+    font-size: 3em;
+    color: #ffd000;
+}
+.stat-block .year {
+    font-size: 2em;
 }
