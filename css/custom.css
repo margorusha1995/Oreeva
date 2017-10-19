@@ -87,3 +87,38 @@ form {
 .logo {
     max-height: 40px;
 }
+@media (max-width: 1200px) {
+    .update-button {
+        padding: 1em 1.5em !important;
+    }
+}
+@media (max-width: 1100px) {
+    .update-button {
+        padding: 1em 1em !important;
+    }
+}
+@media (max-width: 1000px) {
+    .update-button {
+        padding: 1em 1em !important;
+    }
+}
+@media (max-width: 900px) {
+    .input-block, .button-block {
+        width: 100% !important;
+    }
+    .button-block button { 
+        width: 100% !important;
+        margin-top: 1em;
+    }
+}
+.input-block {
+    width: 60%;
+    transition: all 0.7s;
+}
+.button-block {
+    width: 20%;
+    transition: all 0.7s;
+}
+.email-form {
+    align-content: space-between;
+}
