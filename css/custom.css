@@ -29,7 +29,7 @@
 
 
 .openSansFont h1 {
-        font-family: OpenSansBold;
+        font-family: OpenSansLight;
     }
 .nav-container {
     margin-right: auto;
@@ -42,8 +42,41 @@
     font-family: Cabin-Regular;
 }
 
-@media(max-width: 1500px) {
-    .md-w-75 {
-        
+@media(max-width: 650px) {
+    .main-content h1 {
+        font-size: 3em !important;
     }
+
+    form {
+        margin-top: none !important;
+    }
+
+     .email-form input {
+        margin-top: none;
+    }
+
+    .email-form button {
+        width: 100%;
+    }
+}
+
+@media(max-width: 350px) {
+    .main-content h1 {
+        font-size: 2em !important;
+    }
+
+    .main-content footer p {
+        font-size: 1em !important;
+    }
+}
+
+
+@media(max-width: 1500px) {
+    form {
+        margin-top: 2em !important;
+    }
+}
+
+form {
+    margin-top: 4em;
 }
