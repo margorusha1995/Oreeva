@@ -1300,8 +1300,8 @@ p, .p {
   font-size: 1rem;
 }
 
-p.lead, .p.lead {
-  font-size: 1.333rem;
+.lead, .p.lead {
+  color: #b7b7b7;
 }
 
 h6, .h6 {
