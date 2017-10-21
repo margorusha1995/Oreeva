@@ -154,6 +154,9 @@ form {
 .w-60 {
     width: 60% !important;
 }
+.w-90 {
+    width: 90% !important;
+}
 .font-size-16 {
     font-size: 16px;
 }
@@ -167,6 +170,7 @@ form {
     background-repeat: no-repeat;
     background-position: center;
     transition: all 0.7s;
+    opacity: 0.7;
 }
 
 .btn {
@@ -212,11 +216,25 @@ form {
     width: 200%;
     background-color: gray;
 }
+.logo-area {
+    display: flex;
+}
 .logo-area .logo {
     text-align: center;
+    min-height: 160px;
+    display: flex;
 }
 .logo-area .logo img{
     max-width: 60%;
+    margin: auto;
+}
+.logo-area .blog img{
+    max-width: 90% !important;
+    margin: auto;
+}
+.logo-area .blog .text {
+    width: 90% !important;
+    text-align: left;
 }
 .logo-area .block {
     text-align: center;
@@ -621,4 +639,21 @@ form {
 .my-11 {
   margin-top: 15rem !important;
   margin-bottom: 15rem !important;
+}
+.p-5 {
+    padding: 5em !important;
+}
+.sub-image-1 {
+    background-image: url("../images/subimage1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.7s;
+}
+.sub-image-2 {
+    background-image: url("../images/subimage2.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.7s;
 }
