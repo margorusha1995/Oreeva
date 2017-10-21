@@ -1,0 +1,57 @@
+@font-face {
+    font-family: OpenSansRegular;
+    src: url(../fonts/OpenSans-Regular.ttf); 
+}
+
+@font-face {
+    font-family: OpenSansLight;
+    src: url(../fonts/OpenSans-Light.ttf); 
+}
+
+@font-face {
+    font-family: OpenSansBold;
+    src: url(../fonts/OpenSans-Bold.ttf); 
+}
+
+@font-face {
+    font-family: OpenSansSemiBold;
+    src: url(../fonts/OpenSans-Semibold.ttf); 
+}
+
+@font-face {
+    font-family: Cabin-Regular;
+    src: url(../fonts/cabin/Cabin-Regular.otf); 
+}
+
+.open-sans-light {
+    font-family: OpenSansLight;
+}
+
+.open-sans-bold {
+    font-family: OpenSansSemiBold;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.text-color {
+    color: #546e7a;
+}
+.green-color {
+    color: #83b797;
+}
+
+.custom-input {
+    border: none;
+    background: transparent;
+    border-bottom: solid 2px rgba(84, 110, 122, 0.2);
+    border-radius: 0;
+    transition:  border-bottom 0.5s;
+}
+.custom-input:active, .custom-input:focus {
+    border: none;
+    background: transparent !important;
+    border-bottom: solid 2px rgba(84, 110, 122, 0.5);
+    border-radius: 0;
+}

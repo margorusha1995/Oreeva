@@ -1,0 +1,94 @@
+
+.fs-xs {
+    font-size: .6rem;
+}
+.fs-sm {
+    font-size: .8rem;
+}
+h4,.h4,.fs-md {
+    font-size: .8rem;
+}
+h3,.h3,.fs-lg {
+    font-size: 1rem;
+}
+h2,.h2,.fs-xl {
+    font-size: 1rem;
+}
+h1,.h1,.fs-xxl {
+    font-size: 1.6rem;
+}
+h1,h2,.h1,.h2,.fs-xxl,.fs-xl {
+    font-family: OpenSansLight;
+    font-weight: bold;
+}
+h3,h4,.h3,.h4,.fs-lg {
+    font-family: OpenSansSemiBold;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+ 
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .fs-xs {
+        font-size: .6rem;
+    }
+    .fs-sm {
+        font-size: .8rem;
+    }
+    h4,.h4,.fs-md {
+        font-size: 1rem;
+    }
+    h3,.h3,.fs-lg {
+        font-size: 1.4rem;
+    }
+    h2,.h2,.fs-xl {
+        font-size: 2rem;
+    }
+    h1,.h1,.fs-xxl {
+        font-size: 2rem;
+    }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    
+}
+
+body {
+    margin: 3rem 2rem;
+    background-color: #fff;
+    color: #546e7a;
+}
+
+.block {
+    margin-top: 1rem;
+    background-color: #f8f6f4;
+    padding-top: .5rem;
+}
+
+.params-map {
+    background-color: #ddd;
+}
+
+.trend-item-value {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: .4rem solid #ccc; 
+    line-height: 3.25rem;
+    height: 4rem;
+    width: 4rem;
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .trend-item-value {
+        border: .7rem solid #ccc; 
+        line-height: 6.5rem;
+        height: 8rem;
+        width: 8rem;
+    }    
+}
