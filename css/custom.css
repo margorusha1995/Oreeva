@@ -268,7 +268,7 @@ form {
     color: #83b797;
 }
 
-@media(max-width: 1150px) {
+@media screen and (max-width: 1150px) {
     .stat-overview-area {
             width: 100% !important;
     }
