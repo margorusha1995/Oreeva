@@ -17,7 +17,11 @@ h2,.h2,.fs-xl {
 h1,.h1,.fs-xxl {
     font-size: 1.6rem;
 }
-h1,h2,h3,h4,.h1,.h2,.h3,.h4 {
+h1,h2,.h1,.h2,.fs-xxl,.fs-xl {
+    font-family: OpenSansLight;
+    font-weight: bold;
+}
+h3,h4,.h3,.h4,.fs-lg {
     font-family: OpenSansSemiBold;
 }
 
@@ -56,11 +60,12 @@ h1,h2,h3,h4,.h1,.h2,.h3,.h4 {
 body {
     margin: 3rem 2rem;
     background-color: #fff;
+    color: #546e7a;
 }
 
 .block {
     margin-top: 1rem;
-    background-color: #eee;
+    background-color: #f8f6f4;
     padding-top: .5rem;
 }
 

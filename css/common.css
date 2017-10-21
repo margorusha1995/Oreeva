@@ -27,7 +27,6 @@
     font-family: OpenSansLight;
 }
 
-
 .open-sans-bold {
     font-family: OpenSansSemiBold;
 }
@@ -36,12 +35,23 @@
     white-space: nowrap;
 }
 
-.nomargin {
-    margin: 0;
+.text-color {
+    color: #546e7a;
+}
+.green-color {
+    color: #83b797;
 }
 
-.nopadding {
-    padding: 0;
+.custom-input {
+    border: none;
+    background: transparent;
+    border-bottom: solid 2px rgba(84, 110, 122, 0.2);
+    border-radius: 0;
+    transition:  border-bottom 0.5s;
 }
-
-
+.custom-input:active, .custom-input:focus {
+    border: none;
+    background: transparent !important;
+    border-bottom: solid 2px rgba(84, 110, 122, 0.5);
+    border-radius: 0;
+}
