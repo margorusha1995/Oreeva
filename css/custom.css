@@ -110,12 +110,24 @@ form {
         width: 100% !important;
         margin-top: 1em;
     }
+    .logo-area .text .title {
+      font-size: 1.2em !important;
+    }
+    .logo-area .text .paragraph {
+      font-size: 0.8em !important;
+    }
 }
 @media screen and (max-width: 760px) {
     .main-image {
         background-image: url("../images/main-mobile.png") !important;
         background-position: bottom !important;
         background-size: cover !important;
+    }
+    .logo-area .text .title {
+      font-size: 1em !important;
+    }
+    .logo-area .text .paragraph {
+      font-size: 0.6em !important;
     }
 }
 .input-block {
