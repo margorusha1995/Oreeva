@@ -342,3 +342,32 @@ form {
 .subtext-color {
     color: #b7b7b7;
 }
+.employee .photo {
+    background-image: url(../images/employee.jpeg);
+    height: 200px;
+    width: 35%;
+    background-color: #546e7a;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: luminosity;
+    transition: background-color 0.5s;
+}
+.employee .photo:hover {
+    background-color: transparent;
+}
+.employee .text{
+    width: 60%;
+}
+.employee .contacts i {
+    transition: color 0.5s;
+}
+.employee .contacts i:hover{
+    cursor: pointer;
+    color: #ff9c00;
+}
+.accent-color {
+    color: #ff9c00;
+}
+.accent-light-color {
+    color: #ffca00;
+}
