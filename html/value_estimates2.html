@@ -19,10 +19,30 @@
      })(document, ‘script’);
     </script>
 </head>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../images/logo_color_beta.png" class="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <body class="fs-md open-sans-light">
 
-<div class="container-fluid">
+<div class="container">
     <div class="row top">
         <div class="col-8 top-title open-sans-bold nowrap h1">Oreeva Estimate</div>
         <div class="col-4 text-right">
@@ -30,11 +50,9 @@
             <div id="top-confidence" class="fs-sm">Good Confidence</div>
         </div>
     </div>
-</div>
 
 <!-- Params -->
-<div class="container-fluid params">
-    <div class="row">
+    <div class="row params">
         <div class="col-xs-12 col-md-6 push-md-6 block params-map">
             todo map
         </div>
@@ -135,10 +153,9 @@
             </form>
         </div>
     </div>
-</div>
 
 <!-- Price trend -->
-<div class="container-fluid block trend">
+<div class="block trend">
     <h3 id="trend-header">Price trend SL1</h3>
     <div class="row text-center" id="trend">
         <div class="col-3 d-flex flex-column align-items-center trend-item">
@@ -161,8 +178,7 @@
 </div>
 
 <!-- Market analytics -->
-<div class="container-fluid market">
-    <div class="row">
+    <div class="row market">
         <div class="col-xs-12 col-md-5 push-md-7 block market-facts">
             <div class="d-flex justify-content-end align-items-center">
                 <h3 id="market-facts-header" class="mr-auto m-0">Market facts</h3>
@@ -196,11 +212,10 @@
             </div>
         </div>
     </div>
-</div>
 
 <!-- Recent sales -->
 
-<div class="container-fluid block trends-history">
+<div class="block trends-history">
     <h3>Recent sales in the area</h3>
     <div class="table-responsive">
         <table id="table" class="table">
@@ -217,6 +232,250 @@
         </table>
     </div>
 </div>
+    
+
+<div id="loading">
+    <div class="loader-circle"></div>
+    <div class="loader-line-mask">
+        <div class="loader-line"></div>
+    </div>
+</div>
+
+
+<div id="sorryModal" class="modal fade modal-white" role="dialog">
+    <div class="modal-dialog" style="margin-top: 20vh;">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-label="Close" class="close modal-close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">Sorry, we don’t have enough data</h4>
+            </div>
+            <div class="modal-body text-center">
+                <p>We do not have enough data to provide an estimate for this property. Please try again by entering a
+                    different address.</p>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="location.reload();">Try
+                    again
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>    
+
+<script>
+    var selElement = null;
+    var dataMap = {};
+    var pickedAddress = null;
+    var timeout;
+
+//    $("#myModal").on("shown", function(){
+//        $("#size").focus();
+//    });
+
+    $('#sorryModal').on('hidden.bs.modal', function () {
+        hideSorryModal();
+    });
+
+    var typeAheadRef = $("#request-input").typeahead({hint: !1, highlight: !1, minLength: 3}, {
+        name: "addresses",
+        source: function (query, process, processAsync) {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+
+            timeout = setTimeout(function () {
+                $("#text_search_spinner").css("visibility", "visible");
+                $.ajax({
+                    url: 'searchAddress',
+                    type: 'get',
+                    data: {query: query},
+                    dataType: 'json',
+                    success: function (json) {
+                        var data = new Array();
+                        dataMap = {};
+                        $.each(json.addresses, function (i, adr) {
+                            key = adr.address1 + " " + adr.street + " " + adr.address2 + ", " + adr.postCode;
+                            data.push(key);
+                            dataMap[key] = adr;
+                        });
+                        $("#text_search_spinner").css("visibility", "collapse");
+                        return processAsync(data);
+                    },
+                    error: function(){
+                        $("#text_search_spinner").css("visibility", "collapse");
+                    }
+                })
+            }, 500);
+        },
+        async: true,
+        limit: 500,
+        templates: {header: "<h4 class='tt-suggestion_header'>Addresses</h4>"}
+    });
+
+    typeAheadRef.keypress(function (event) {
+        if (event.keyCode === 10 || event.keyCode === 13)
+            event.preventDefault();
+        if (event.keyCode === 13)
+            open_search_predict_form()
+    });
+
+    typeAheadRef.focus();
+
+    $("#request-input, #request-modal .address-control").bind("typeahead:select", function () {
+        $(this).data("state", "select").closest(".input-group, .form-group").removeClass("has-error")
+    }).bind("typeahead:change", function () {
+        var e = $(this);
+        "select" != e.data("state") && e.data("state", "invalid").closest(".input-group, .form-group").addClass("has-error")
+    })
+            .bind("typeahead:selected", function (obj, value) {
+                selElement = dataMap[value];
+                $("#valButton").prop('disabled', false);
+                $("#valButton").className += "btn-primary";
+            });
+
+    $("#property_type").change(function (event) {
+        $("#floor_level").prop('disabled', $("#property_type").val() != "F");
+    });
+
+    $('#valButton').on('click', function (event) {
+        open_search_predict_form()
+    });
+
+    function open_search_predict_form() {
+//        var code = window.location.href.indexOf("xgboost") !== -1 ? "E17" : "CR0";
+        if (selElement === null) return;
+        var subCode = selElement.postCode.substr(0, 3);
+        if (subCode === 'SL1' || subCode === 'SL2' || subCode === 'SL3') {
+            $("#myModal").modal("show");
+            $("#floor_level").val(null);
+            $("#rooms_count").val(null);
+            $("#size").val(null);
+            $("#age_type").val(null);
+        } else {
+            showSorryModal();
+        }
+    }
+
+    function getTransaction(street, address, postcode) {
+        return $.ajax({
+            url: 'searchTransaction',
+            type: 'get',
+            data: {
+                street: street,
+                address: address,
+                postcode: postcode
+            },
+            dataType: 'json',
+            success: function (json) {
+                $("#propertyName").text(address.capitalize(true) + " " + street.capitalize(true) + ", " + postcode);
+                $("#rooms_count").val(json.numberOfRooms);
+                $("#size").val((json.area == null) ? $("#size").text("") : Math.round((json.area * 10.7638673611111)));
+//                $("#tenure_type").val(json.duration);
+                $("#age_type").val(json.oldOrNew);
+                $("#myModal").modal("show");
+                $("#myModal").on("shown", function(){
+                    $("#size").focus();
+                });
+
+            }
+        })
+    }
+
+    function processPrediction() {
+        $("#loading").css("display", "none");
+        var predictionResult = {
+            postcode: selElement.postCode,
+            latitude: selElement.latitude,
+            longitude: selElement.longitude,
+            street: selElement.street,
+            propertyAddress:    selElement.address1.capitalize(true) + " " + selElement.street.capitalize(true) + ", " +
+                                selElement.postCode,
+            propertyType: $("#property_type option:selected").html(),
+            propType: $("#property_type").val(),
+            rooms: $("#rooms_count").val(),
+            area: $("#size").val(),
+            floor: $("#floor_level").val(),
+            age: $("#age_type").val(),
+            duration: "L",
+            model_type: "C"
+        };
+
+        localStorage.setItem("prediction", JSON.stringify(predictionResult));
+        window.location.href = "value_estimates.html"
+    }
+
+    String.prototype.capitalize = function (lower) {
+        return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function (a) {
+            return a.toUpperCase();
+        });
+    };
+
+    $.validator.setDefaults({
+        submitHandler: function () {
+            $("loading").css("display", "block");
+            processPrediction();
+        }
+    });
+
+    $('#floor_level').change(function(){
+        $(this).valid()
+    });
+    $('#rooms_count').change(function(){
+        $(this).valid()
+    });
+    $('#age_type').change(function(){
+        $(this).valid()
+    });
+
+    function showSorryModal() {
+        $("#sorryModal").modal("show");
+        $(".container").addClass("wrapper")
+    }
+
+    function hideSorryModal(){
+        $("#sorryModal").modal("hide");
+        $(".container").removeClass("wrapper")
+    }
+
+    $(document).ready(function () {
+        $("#propertyForm").validate({
+            rules: {
+                size: "required",
+                floor_level: { required : true },
+                rooms_count: { required : true },
+                age_type: { required : true }
+            },
+            messages: {
+                size: "Please enter property area",
+                floor_level: { required : "Please select an item!" },
+                rooms_count: { required : "Please select an item!" },
+                age_type: { required : "Please select an item!" }
+            },
+            errorElement: "em",
+            errorPlacement: function (error, element) {
+                // Add the `help-block` class to the error element
+                error.addClass("help-block");
+
+                if (element.prop("type") === "checkbox") {
+                    error.insertAfter(element.parent("label"));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).parents(".form-group").addClass("has-error").removeClass("has-success");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).parents(".form-group").addClass("has-success").removeClass("has-error");
+            }
+        });
+    });
+
+</script>
 
 </body>
 
