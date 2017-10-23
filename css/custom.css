@@ -122,6 +122,7 @@ form {
         background-image: url("../images/main-mobile.png") !important;
         background-position: bottom !important;
         background-size: cover !important;
+        height: 25% !important;
     }
     .logo-area .text .title {
       font-size: 1em !important;
@@ -131,6 +132,9 @@ form {
     }
     .sub-image-1 {
       height: 40% !important;
+    }
+    .text-center-sm {
+        text-align: center !important;
     }
 }
 .input-block {
@@ -174,6 +178,9 @@ form {
 }
 .w-90 {
     width: 90% !important;
+}
+.font-size-12 {
+    font-size: 12px;
 }
 .font-size-16 {
     font-size: 16px;
@@ -2104,4 +2111,10 @@ form {
 }
 .contact-icon:hover {
   color: #ff9c00;
+}
+.border-top {
+    border-top: solid 1px #dadada;
+}
+.border-bottom {
+       border-bottom: solid 1px #dadada;
 }
