@@ -12,17 +12,19 @@ h3,.h3,.fs-lg {
     font-size: 1rem;
 }
 h2,.h2,.fs-xl {
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 h1,.h1,.fs-xxl {
     font-size: 1.6rem;
 }
 h1,h2,.h1,.h2,.fs-xxl,.fs-xl {
     font-family: OpenSansLight;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 h3,h4,.h3,.h4,.fs-lg {
-    font-family: OpenSansSemiBold;
+    /*font-family: OpenSansSemiBold;*/
+    font-family: OpenSansLight;
+    /*font-weight: bold;*/
 }
 
 /*Small devices (landscape phones, 576px and up)*/
@@ -45,7 +47,7 @@ h3,h4,.h3,.h4,.fs-lg {
         font-size: 1.4rem;
     }
     h2,.h2,.fs-xl {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     h1,.h1,.fs-xxl {
         font-size: 2rem;
@@ -58,9 +60,52 @@ h3,h4,.h3,.h4,.fs-lg {
 }
 
 body {
-    margin-top: 70px;
-    background-color: #fff;
+    margin-top: 4rem;
+    background-color: #f8f6f4;
     color: #546e7a;
+}
+
+.accent-color-1 {
+    color: #ff9c00;
+}
+.accent-color-2 {
+    color: #ff9c00
+}
+.background-contrast-color {
+    color: #546e7a;
+}
+.text-color {
+    color: #546e7a;
+}
+.secondary-text-color {
+    color: #b7b7b7;
+}
+.accent-text-color-1 {
+    color: #83b797;
+}
+.accent-text-color-2 {
+    color: #a2ccb2;
+}
+
+.top {
+    border-bottom: thin solid #b7b7b7;  
+    padding-bottom: 1rem;
+}
+
+.confidence-1 {
+    color: #83h797;
+}
+.confidence-2 {
+    color: #ff9c00;
+}
+.confidence-3 {
+    color: inherit;
+}
+.trend-up {
+    color: #83b797;
+}
+.trend-down {
+    color: #ff9c00;
 }
 
 .block {
@@ -73,22 +118,3 @@ body {
     background-color: #ddd;
 }
 
-.trend-item-value {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: .4rem solid #ccc; 
-    line-height: 3.25rem;
-    height: 4rem;
-    width: 4rem;
-}
-
-/*Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {
-    .trend-item-value {
-        border: .7rem solid #ccc; 
-        line-height: 6.5rem;
-        height: 8rem;
-        width: 8rem;
-    }    
-}
