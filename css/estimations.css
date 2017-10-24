@@ -92,7 +92,7 @@ body {
 }
 
 .confidence-good {
-    color: #83h797;
+    color: #83b797;
 }
 .confidence-average {
     color: #ff9c00;
@@ -113,15 +113,23 @@ body {
     padding: 1rem 2rem 2rem;
 }
 
-    .market-facts {
-        margin-left: 0;
-    }
+.market-facts {
+    margin-left: 0;
+}
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
     .market-facts {
         border-left: .5rem solid #fff;
         /*margin-left: .5rem;*/
     }
+}
+
+.table {
+    font-family: OpenSansSemiBold !important;
+}
+
+.table th {
+    color: #83b797 !important;
 }
 
 .params-map {

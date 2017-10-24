@@ -54,17 +54,17 @@
             <div class="col-8 top-title nowrap h2 pl-0">Oreeva Estimate</div>
             <div class="col-4 text-right pr-0">
                 <div id="price" class="h1 font-weight-bold pound">222,222</div>
-                <div id="confidence" class="text-capitalize fs-sm confidence-good">Good Confidence</div>
+                <div id="confidence" class="text-uppercase open-sans-bold fs-xs confidence-good">Good Confidence</div>
             </div>
         </div>
 
         <!-- Params -->
         <div class="row params m-0">
             <div class="col-xs-12 col-md-6 push-md-6 block params-map">
-               todo map
+                todo map
             </div>
             <div class="col-xs-12 col-md-6 pull-md-6 block params-form">
-               todo form
+                todo form
             </div>
         </div>
 
@@ -158,12 +158,13 @@
             <table id="table" class="table">
                 <thead>
                 <tr>
-                    <th data-field="date">Date</th>
+                    <th data-formatter="runningFormatter">№</th>
+                    <th data-field="date">Transaction date</th>
                     <th data-field="address">Address</th>
-                    <th data-field="total_floor_area" data-formatter="decimalsFormatter">Area (sqf)</th>
-                    <th data-field="number_of_rooms" data-formatter="decimalsFormatter">Rooms</th>
-                    <th data-field="new_price" data-formatter="decimalsFormatter">Price&nbsp;(&#163;)</th>
-                    <th data-field="similarity" data-formatter="decimalsFormatter">Similarity score</th>
+                    <th data-align="center" data-halign="center" data-field="total_floor_area" data-formatter="decimalsFormatter">Floor Area</th>
+                    <th data-align="center" data-halign="center" data-field="type" data-formatter="typeFormatter">Type</th>
+                    <th data-align="center" data-halign="center" data-field="number_of_rooms" data-formatter="decimalsFormatter">Rooms</th>
+                    <th data-align="center" data-halign="center" data-field="new_price" data-formatter="decimalsDelimiterFormatter">Price</th>
                 </tr>
                 </thead>
             </table>
@@ -264,6 +265,7 @@
                         latitude: 51.51953,
                         longitude: -0.647889,
                         new_price: 200000,
+                        type: "Flat",
                         number_of_rooms: 3,
                         similarity: 90
                     },
@@ -276,6 +278,7 @@
                         latitude: 51.51953,
                         longitude: -0.647889,
                         new_price: 200500,
+                        type: "Flat",
                         number_of_rooms: 4,
                         similarity: 95
                     },
@@ -288,6 +291,7 @@
                         latitude: 51.49719,
                         longitude: -0.553413,
                         new_price: 200000,
+                        type: "Flat",
                         number_of_rooms: 3,
                         similarity: 90
                     }
@@ -354,6 +358,18 @@
 
         function decimalsFormatter(value) {
             return Math.round(value);
+        }
+
+        function decimalsDelimiterFormatter(value) {
+            return delimeter(Math.round(value));
+        }
+
+        function typeFormatter(value) {
+            return value;
+        }
+
+        function runningFormatter(value, row, index) {
+            return index+1;
         }
 
         function openMainPage() {
