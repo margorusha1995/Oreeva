@@ -1,3 +1,4 @@
+/*---fonts---*/
 @font-face {
     font-family: OpenSansRegular;
     src: url(../fonts/OpenSans-Regular.ttf); 
@@ -27,23 +28,12 @@
     font-family: OpenSansLight;
 }
 
-
 .open-sans-bold {
         font-family: OpenSansSemiBold;
-    }
+}
 
     body {
     height: 100%;
-}
-.nav-container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    width: 75%;
-}
-.navbar-brand {
-    font-family: Cabin-Regular;
 }
 
 @media screen and (max-width: 650px) {
@@ -143,6 +133,8 @@ form {
     background-color: gray;
 }
 
+
+/*---sizes---*/
 .h-15 {
     height: 15% !important;
 }
@@ -152,11 +144,9 @@ form {
 .w-80 {
   width: 80% !important;
 }
-
 .h-85 {
     height: 85% !important;
 }
-
 .w-33 {
     width: 33%;
 }
@@ -179,6 +169,7 @@ form {
     font-size: 20px;
 }
 
+/*---custom Bootstrap elements---*/
 .btn {
     border-radius: 1px;
 }
@@ -204,23 +195,50 @@ form {
 .btn-primary:focus {
     box-shadow: none;
 }
+.btn-outline-secondary:hover {
+    background-color: #ff9c00;
+    border-color: #ff9c00;
+}
+.btn-outline-secondary:hover {
+    font-family: OpenSansLight;
+}
+.custom-input {
+    border: none;
+    background: transparent;
+    border-bottom: solid 2px rgba(84, 110, 122, 0.2);
+    border-radius: 0;
+    transition:  border-bottom 0.5s;
+}
+.custom-input:active, .custom-input:focus {
+    border: none;
+    background: transparent !important;
+    border-bottom: solid 2px rgba(84, 110, 122, 0.5);
+    border-radius: 0;
+}
+.navbar-toggler.custom {
+    border: none !important;
+}
+
+.nav-link:hover {
+    color: #ffca00 !important;
+}
+.nav-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 75%;
+}
+.navbar-brand {
+    font-family: Cabin-Regular;
+}
+
+
+
 .area {
     width: 100px;
     height: 100px;
     margin: 0.5em;
-}
-.stat-block .value {
-    font-size: 3em;
-    color: #83b797;
-}
-.stat-block .year {
-    font-size: 15px;
-    color: #546e7a;
-}
-.chart-area {
-    height: 300px;
-    width: 200%;
-    background-color: gray;
 }
 .logo-area {
     display: flex;
@@ -255,13 +273,13 @@ form {
   width: 90%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #546e7a;
+  /*background-color: #546e7a;
   background-blend-mode: luminosity;
-  transition: background-color 0.6s;
+  transition: background-color 0.6s;*/
 }
 
 .logo-area .blog .image:hover {
-  background-color: transparent;
+  /*background-color: transparent;*/
   cursor: pointer;
 }
 .blog .author  {
@@ -289,25 +307,9 @@ form {
 .logo-area .block img{
     max-width: 50%;
 }
-.text-color {
-    color: #546e7a;
-}
-.custom-input {
-    border: none;
-    background: transparent;
-    border-bottom: solid 2px rgba(84, 110, 122, 0.2);
-    border-radius: 0;
-    transition:  border-bottom 0.5s;
-}
-.custom-input:active, .custom-input:focus {
-    border: none;
-    background: transparent !important;
-    border-bottom: solid 2px rgba(84, 110, 122, 0.5);
-    border-radius: 0;
-}
-.green-color {
-    color: #83b797;
-}
+
+
+
 
 @media screen and (max-width: 1150px) {
     .stat-overview-area {
@@ -374,19 +376,6 @@ form {
     cursor: pointer;
     color: #ff9c00;
 }
-.accent-color {
-    color: #ff9c00;
-}
-.accent-light-color {
-    color: #ffca00;
-}
-.btn-outline-secondary:hover {
-    background-color: #ff9c00;
-    border-color: #ff9c00;
-}
-.btn-outline-secondary:hover {
-    font-family: OpenSansLight;
-}
 .img-circle {
     border-radius: 100px;
     box-shadow: 0 0 7px #666; 
@@ -402,6 +391,21 @@ form {
     text-align: center;
     transform: rotate(180deg);
 }
-.navbar-toggler.custom {
-    border: none !important;
+
+
+/*---colors---*/
+.black {
+    color: black;
+}
+.accent-color {
+    color: #ff9c00;
+}
+.accent-light-color {
+    color: #ffca00;
+}
+.green-color {
+    color: #83b797;
+}
+.text-color {
+    color: #546e7a;
 }
