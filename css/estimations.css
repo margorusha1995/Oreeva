@@ -126,10 +126,20 @@ body {
 
 .table {
     font-family: OpenSansSemiBold !important;
+    border: none !important;
 }
 
 .table th {
     color: #83b797 !important;
+    border-top: none;
+}
+
+.fixed-table-container {
+    border: none !important;
+}
+
+.fixed-table-body {
+     height: auto !important; 
 }
 
 .params-map {
