@@ -402,3 +402,6 @@ form {
     text-align: center;
     transform: rotate(180deg);
 }
+.navbar-toggler.custom {
+    border: none !important;
+}
