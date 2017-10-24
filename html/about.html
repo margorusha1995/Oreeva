@@ -1,4 +1,4 @@
-<html class="w-100">
+<html>
 
 <head>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css">
@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/custom.css">
     <link rel="stylesheet" type="text/css" href="../css/spaces.css">
+    <link rel="stylesheet" href="../css/anicollection.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- BugHerd -->
     <script type=‘text/javascript’>
@@ -21,28 +22,62 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-        <img src="../images/logo_color_beta.png" class="logo" />
-    </a>
+            <a class="navbar-brand" href="index.html">
+                <img src="../images/logo_color_beta.png" class="logo" />
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
                 aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="container" data-anijs="if: scroll, on:window, do: fadeInUp animated, before: scrollReveal">
+        <div class="row">
+            <div class="col-lg-1 text-uppercase vertical subtext-color pb-6">
+                <h1 class="display-2 open-sans-bold">Our story</h2>
+            </div>
+            <div class="col-lg-7 pt-8">
+                <h5>— Every solution starts with a problem... </h5>
+                <p class="subtext-color open-sans-light">
+                    Real estate data is plentiful and comes from many places, and OREEVA’s machine learning algorithm can handle all of it with
+                    aplomb. OREEVA stands for Online Real Estate Estimates, Valuations & Analytics, and we do just that.
+                    We offer full transparency to the real estate market, at a low cost, and at the level of individual postcodes.
+                    And we help our clients save time and money when evaluating a property, assessing risk or reevaluating
+                    their portfolios.
+                </p>
+                <h5 class="mt-5">— The team that does it all... </h5>
+                <p class="subtext-color open-sans-light">
+                    One of our greatest accomplishments has been assembling a group of experienced and driven individuals who comprise our core
+                    team and our advisers. Each one has mastered his or her domain, be it computer science, deep learning
+                    or real estate investing. We’re all excited about building the best possible product and introducing
+                    it to the real estate market. And we’re thrilled at the prospect of helping you do what you do best,
+                    which is making the right investment for the right place at the right time.
+                </p>
+            </div>
+            <div class="col-lg-3 offset-lg-1 pt-8">
+                <h5>— Founded in </h5>
+                <h1 class="display-4 text-color open-sans-light"> 2017 </h1>
+                <h5 class="mt-7">— Locations </h5>
+                <h1 class="display-5 text-color open-sans-light"> LONDON, ZURICH, TOMSK </h1>
+            </div>
+        </div>
+    </div>
     <div class="container">
-        <div class="row text-color mt-md-7 mt-sm-3 mb-sm-3 mb-xs-3 mt-xs-3">
-            <div class="col-md-12 col-lg-12 col-sm-12 m-auto p-5">
+        <div class="row text-color mt-md-7 mb-md-7 mt-sm-3 mb-sm-3 mb-xs-3 mt-xs-3" data-anijs="if: scroll, on:window, do: fadeInUp animated, before: scrollReveal">
+            <div class="col-md-12 col-lg-12 col-sm-12 p-5">
                 <div class="row">
                     <div class="com-lg-12 col-md-12 text-center">
                         <h1 class="open-sans-light fw-600">
@@ -56,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div class="row employee open-sans-light justify-content-between">
+        <div class="row employee open-sans-light justify-content-between" data-anijs="if: scroll, on:window, do: fadeInUp animated, before: scrollReveal">
             <div class="col-lg-5 col-md-6 d-flex mb-8 justify-content-between">
                 <div class="photo">
                 </div>
@@ -107,7 +142,8 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
+<script src="../js/anijs.js"></script>
+<script src="../js/anijs-helper-scrollreveal.js"></script>

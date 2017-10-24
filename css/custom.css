@@ -230,9 +230,10 @@ form {
     text-align: center;
     min-height: 160px;
     display: flex;
+    width: 250px;
 }
 .logo-area .logo img{
-    max-width: 60%;
+    max-width: 40%;
     margin: auto;
 }
 .logo-area .blog img{
@@ -241,6 +242,9 @@ form {
 }
 .logo-area .blog .text:hover {
   cursor: pointer;
+}
+.logo-area .blog .overview {
+    border-bottom: solid 1px rgba(193, 193, 193, 0.15);
 }
 .logo-area .blog .overview, .logo-area .blog .text {
   width: 90% !important;
@@ -389,4 +393,12 @@ form {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
+}
+.main-background {
+    background-color: #f7f6f4;
+}
+.vertical {
+    writing-mode: vertical-lr;
+    text-align: center;
+    transform: rotate(180deg);
 }
