@@ -1,11 +1,17 @@
 <html>
 
 <head>
+    <style>
+        body {
+            height: 100%;
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.min.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap-beta.min.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/custom.css">
     <link rel="stylesheet" type="text/css" href="../css/spaces.css">
+    <link rel="stylesheet" href="../css/anicollection.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- BugHerd -->
     <script type=‘text/javascript’>
@@ -41,7 +47,8 @@
         </div>
     </nav>
     <!--page 1-->
-    <div class="row pt-5" style="background-color: #f7f6f4">
+    <div class="row pt-5" style="background-color: #f7f6f4"
+    data-anijs="if: scroll, on:window, do: bounceInRight animated, before: scrollReveal">
         <div class="col-md-5 col-lg-5 offset-lg-1 col-sm-12">
             <img src="../images/main.png" class="w-100 mt-lg-7 mb-lg-7" />
         </div>
@@ -74,7 +81,8 @@
         </div>
     </div>
     <!--page 2-->
-    <div class="row">
+    <div class="row"
+    data-anijs="if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal">
         <div class="col-md-5 offset-md-1 col-lg-4 offset-lg-1 col-sm-12 pt-5 pb-3">
             <div class="main-content p-4 text-color open-sans-light">
                 <h5 class="subtext-color">
@@ -108,7 +116,8 @@
         </div>
     </div>
     <!--page 3-->
-    <div class="row" style="background-color: #f7f6f4">
+    <div class="row" style="background-color: #f7f6f4"
+    data-anijs="if: scroll, on:window, do: bounceInRight animated, before: scrollReveal">
         <div class="col-md-4 col-lg-4 offset-lg-1 col-sm-12 d-flex">
             <div class="sub-image-2 h-75 w-100 m-auto"></div>
         </div>
@@ -130,7 +139,8 @@
         </div>
     </div>
     <!--page 4-->
-    <div class="container">
+    <div class="container"
+    data-anijs="if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal">
         <div class="row pt-5 pb-5" style="background-color: white">
             <div class="col-md-12 col-lg-12 col-sm-12">
                 <div class="row mt-5">
@@ -177,7 +187,8 @@
         </div>
     </div>
     <!--page 5-->
-    <div class="row text-color" style="background-color: #f7f6f4">
+    <div class="row text-color" style="background-color: #f7f6f4"
+    data-anijs="if: scroll, on:window, do: bounceInRight animated, before: scrollReveal">
         <div class="col-md-12 col-lg-12 col-sm-12 m-auto p-5">
             <div class="row">
                 <div class="com-lg-12 col-md-12 text-center">
@@ -229,7 +240,8 @@
         </div>
     </div>
     <!--page 6-->
-    <div class="row text-color border-bottom">
+    <div class="row text-color border-bottom"
+    data-anijs="if: scroll, on:window, do: bounceInLeft animated, before: scrollReveal">
         <div class="col-md-12 col-lg-12 col-sm-12 m-auto pb-5 pt-5">
             <div class="row">
                 <div class="com-lg-12 col-md-12 text-center">
@@ -341,3 +353,5 @@
 </body>
 
 </html>
+<script src="../js/anijs.js"></script>
+<script src="../js/anijs-helper-scrollreveal.js"></script>
